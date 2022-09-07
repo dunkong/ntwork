@@ -149,14 +149,15 @@ except KeyboardInterrupt:
 代码如下：
 
 ```python
+# -*- coding: utf-8 -*-
 import xcgui
 import ntwork
 from xcgui import XApp, XWindow
 
 
-class ntworkWindow(XWindow):
+class NtWorkWindow(XWindow):
     def __init__(self):
-        super(ntworkWindow, self).__init__()
+        super(NtWorkWindow, self).__init__()
         self.loadLayout("resources\\send_text_ui.xml")
         self.setMinimumSize(600, 500)
 
@@ -184,10 +185,10 @@ class ntworkWindow(XWindow):
         if not self.wework_instance or not self.wework_instance.login_status:
             svg = xcgui.XSvg.loadFile("resources\\warn.svg")
             svg.setSize(16, 16)
-            self.notifyMsgWindowPopup(xcgui.position_flag_top, "警告", "请先打开并登录微信",
+            self.notifyMsgWindowPopup(xcgui.position_flag_top, "警告", "请先打开并登录企业微信",
                                       xcgui.XImage.loadSvg(svg), xcgui.notifyMsg_skin_warning)
         else:
-            self.wework_instance.send_text(self.edit_wxid.getText(), self.edit_content.getText())
+            self.wework_instance.send_text(self.edit_conversation_id.getText(), self.edit_content.getText())
 
     def on_recv_message(self, wework, message):
         text = self.edit_log.getText()
@@ -199,7 +200,7 @@ class ntworkWindow(XWindow):
 
 if __name__ == '__main__':
     app = XApp()
-    window = ntworkWindow()
+    window = NtWorkWindow()
     window.showWindow()
     app.run()
     ntwork.exit_()
