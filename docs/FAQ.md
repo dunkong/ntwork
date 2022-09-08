@@ -76,7 +76,7 @@ pyinstaller -F --collect-data=ntwork main.py
 pyinstaller -y --collect-data=ntwork main.py
 ```
 
-打包fastapi_example示例，需要添加`--paths=. --collect-data=ntchat`
+打包fastapi_example示例，需要添加`--paths=. --collect-data=ntwork`
 ```bash
-pyinstaller -F --paths=. --collect-data=ntchat main.py
+pyinstaller -F --paths=. --collect-data=ntwork main.py
 ```
