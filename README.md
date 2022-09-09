@@ -38,6 +38,7 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple ntwork
 ```python
 # -*- coding: utf-8 -*-
 import sys
+import time
 import ntwork
 
 wework = ntwork.WeWork()
@@ -53,7 +54,7 @@ wework.send_text(conversation_id="FILEASSIST", content="hello, NtWork")
 
 try:
     while True:
-        pass
+        time.sleep(0.5)
 except KeyboardInterrupt:
     ntwork.exit_()
     sys.exit()
@@ -63,6 +64,7 @@ except KeyboardInterrupt:
 ```python
 # -*- coding: utf-8 -*-
 import sys
+import time
 import ntwork
 
 wework = ntwork.WeWork()
@@ -72,6 +74,9 @@ wework.open(smart=True)
 
 # 等待登录
 wework.wait_login()
+
+
+time.sleep(3)
 
 # 获取内部(同事)列表并输出
 contacts = wework.get_inner_contacts()
@@ -92,7 +97,7 @@ print(rooms)
 
 try:
     while True:
-        pass
+        time.sleep(0.5)
 except KeyboardInterrupt:
     ntwork.exit_()
     sys.exit()
@@ -127,7 +132,7 @@ def on_recv_text_msg(wework_instance: ntwork.WeWork, message):
 
 try:
     while True:
-        pass
+        time.sleep(0.5)
 except KeyboardInterrupt:
     ntwork.exit_()
     sys.exit()

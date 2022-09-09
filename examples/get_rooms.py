@@ -11,6 +11,8 @@ wework.open(smart=True)
 # 等待登录
 wework.wait_login()
 
+time.sleep(3)
+
 # 获取群列表并输出
 rooms = wework.get_rooms()
 print("群列表: ")

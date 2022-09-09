@@ -11,6 +11,8 @@ wework.open(smart=True)
 # 等待登录
 wework.wait_login()
 
+
+time.sleep(3)
 # 获取内部(同事)列表并输出
 contacts = wework.get_inner_contacts()
 print("内部(同事)联系人列表: ")
